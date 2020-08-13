@@ -28,6 +28,11 @@ if(!dir.exists("figures")) dir.create("figures")
 #Set optional parameters
 SCATTER_LIM = 85 #threshold of scattering angle to remove'
 correct.topography = TRUE #topographically normalize the voxels?
+SS=0.02
+scales=c(0.1,0.5,0.75)
+vox.res=0.1
+superDF=TRUE
+clean=TRUE
 
 #What is your operating system?
 #OS<-"mac" 
@@ -47,8 +52,6 @@ if(PATH & OS=='mac') cloudcompare<-'cloudcompare' else cloudcompare <- cc_dir
 
 # On a Windows machine your path to CC may look like:
 if(PATH & OS!='mac') cloudcompare<-'cloudcompare' else cloudcompare <- cc_dir
-
-
 
 
 if(OS=="mac") run<-function(x) rstudioapi::terminalExecute(x) else run<-function(x) shell(x)
